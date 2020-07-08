@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Praticien} from "../../models/Praticien";
 import {PraticienService} from "../praticien.service";
 import {ActivatedRoute, Router} from "@angular/router";
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-ajout-praticien',
   templateUrl: './ajout-praticien.component.html',

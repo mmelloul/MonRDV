@@ -8,11 +8,15 @@ import { HttpClientModule} from "@angular/common/http";
 import { FormsModule} from '@angular/forms';
 import { CommonModule} from "@angular/common";
 import { PatientComponent} from "./patient/patient.component";
+import {AjoutPraticienComponent} from "./pratitien/ajout-praticien/ajout-praticien.component";
+import {PratitienComponent} from "./pratitien/pratitien.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
+    AjoutPraticienComponent,
+    PratitienComponent,
     PatientComponent
   ],
   imports: [
