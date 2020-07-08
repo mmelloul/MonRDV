@@ -15,11 +15,14 @@ export class AjoutPraticienComponent implements OnInit {
   constructor(private praticienService: PraticienService, private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    //this.praticienForm = new Praticien();
+    this.praticienForm = new Praticien();
+
     this.route.queryParams.subscribe(params => {
-      alert(params["id"]);
-      this.praticienForm= this.praticienService.find(params["id"]);
-      //alert(this.praticienService.find(params["id"].);
+      this.praticienService.find(params["id"]).subscribe(resp => {
+        this.praticienForm = resp;
+
+      }, error => console.log(error));
+
     });
   }
 
