@@ -9,6 +9,9 @@ import {Adresse} from "../models/Adresse";
   styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
+  currentUser: Personne;
+  constructor(private router: Router) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
 
   patientForm: Patient = null;
@@ -75,5 +78,8 @@ export class PatientComponent implements OnInit {
 
   full(adresse: Adresse) {
     return adresse.rue + " " + adresse.CP + " " + adresse.ville.toUpperCase();
+  logout() {
+    localStorage.setItem('currentUser', null);
+    this.router.navigate(['/']);
   }
 }
