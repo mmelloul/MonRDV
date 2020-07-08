@@ -1,3 +1,5 @@
+import {Adresse} from "./Adresse";
+
 export class Personne {
   id: number;
   nom: string;
@@ -5,9 +7,9 @@ export class Personne {
   email: string;
   mdp: string;
   profil: string;
-  adresse: string;
+  adresse: Adresse;
 
-  constructor (id?: number, nom?: string, prenom?: string, email?: string, mdp?: string, profil?: string, adresse?: string) {
+  constructor(id?: number, nom?: string, prenom?: string, email?: string, mdp?: string, profil?: string, adresse?: Adresse) {
     this.id = id;
     this.nom = nom;
     this.prenom = prenom;

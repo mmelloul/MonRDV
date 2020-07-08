@@ -1,0 +1,124 @@
+<div class="card mt-3">
+  <div class="card-header bg-info text-white">
+    <h2>Liste des Patients</h2>
+  </div>
+  <td class="card-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Sexe</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <!--<th>MDP</th>-->
+        <th>Profil</th>
+        <th>Adresse Complète</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let patient of list()">
+        <td>{{patient.id}}</td>
+        <td [ngSwitch]="patient.sexe" >
+          <i *ngSwitchCase="'M'" class="fa fa-male" aria-hidden="true"></i>
+          <i *ngSwitchCase="'F'" class="fa fa-female" aria-hidden="true"></i>
+        </td>
+
+        <td>{{patient.nom}}</td>
+        <td>{{patient.prenom}}</td>
+        <td>{{patient.email}}</td>
+        <!-- <td>{{patient.mdp}}</td> -->
+
+        <ng-template [ngIfElse]="loggedOut" [ngIf]="patient.profil == 'A'">
+          <td>
+            Adminsitrateur.
+          </td>
+        </ng-template>
+
+        <ng-template #loggedOut>
+          <td>
+            Utilisateur.
+          </td>
+        </ng-template>
+
+        <td><!--{{patient.adresse.rue}} {{patient.adresse.CP}} {{patient.adresse.ville.toUpperCase()}}-->
+          {{full(patient.adresse)}}
+        </td>
+        <td>
+          <div class="btn-group btn-group-sm">
+            <a (click)="edit(patient.id)" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+            <a (click)="remove(patient.id)" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+          </div>
+        </td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-footer">
+    <a class="btn btn-success btn-lg" (click)="add()">
+      <i class="fa fa-plus"></i>
+    </a>
+  </div>
+
+  <div class="card mt-3" *ngIf="patientForm!=null">
+    <div class="card-header bg-info text-white">
+      <h3>Edition du Patient</h3>
+    </div>
+
+    <div class="card-body">
+      <div class="form-group">
+        <label for="nom">Id : {{patientForm.id}}</label>
+      </div>
+      <!-- sexe !-->
+      <div class="row">
+        <div class="col-md-6">
+        <label><input type="radio" name="optradio" [checked]="patientForm.sexe=='M'">  Masculin</label>
+        </div>
+        <div class="col-md-6">
+          <label><input type="radio" name="optradio"  [checked]="patientForm.sexe=='F'" >  Feminin</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="text" class="form-control" id="nom" [(ngModel)]="patientForm.nom">
+      </div>
+      <div class="form-group">
+        <label for="nom">Prénom:</label>
+        <input type="text" class="form-control" id="nom" [(ngModel)]="patientForm.prenom">
+      </div>
+      <div class="form-group">
+        <label for="nom">Email:</label>
+        <input type="text" class="form-control" id="nom" [(ngModel)]="patientForm.email">
+      </div>
+      <div class="form-group">
+        <label for="rue">Rue:</label>
+        <input type="text" class="form-control" id="rue" [(ngModel)]="patientForm.adresse.rue">
+      </div>
+      <div class="form-group">
+        <label for="codePostal">Code postal:</label>
+        <input type="text" class="form-control" id="codePostal" [(ngModel)]="patientForm.adresse.CP">
+      </div>
+      <div class="form-group">
+        <label for="ville">Ville:</label>
+        <input type="text" class="form-control" id="ville" [(ngModel)]="patientForm.adresse.ville">
+      </div>
+
+    </div>
+
+    <div class="card-footer">
+      <div class="btn-group btn-group-lg float-right">
+        <a class="btn btn-success" (click)="save()">
+          <i class="fa fa-check"></i>
+        </a>
+        <a class="btn btn-warning" (click)="cancel()">
+          <i class="fa fa-undo"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+

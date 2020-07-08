@@ -6,7 +6,7 @@ export class Praticien extends Personne {
   lieux: Array<Adresse>;
 
   constructor (id: number, nom: string, prenom: string, email: string, mdp: string, profil: string, adresse: string, specialite: string, lieux: Array<Adresse>) {
-    super(id, nom, prenom, email, mdp, profil, adresse);
+    super(id, nom, prenom, email, mdp, profil, null);
     this.specialite = specialite;
     this.lieux = lieux;
   }
