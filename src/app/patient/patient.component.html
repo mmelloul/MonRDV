@@ -30,7 +30,7 @@
         <td>{{patient.email}}</td>
         <!-- <td>{{patient.mdp}}</td> -->
 
-        <!--<ng-template [ngIfElse]="loggedOut" [ngIf]="patient.profil == 'A'">
+        <ng-template [ngIfElse]="loggedOut" [ngIf]="patient.profil == 'A'">
           <td>
             Adminsitrateur.
           </td>
@@ -41,7 +41,7 @@
             Utilisateur.
           </td>
         </ng-template>
-        -->
+
         <td><!--{{patient.adresse.rue}} {{patient.adresse.CP}} {{patient.adresse.ville.toUpperCase()}}-->
           {{full(patient.adresse)}}
         </td>
@@ -56,7 +56,7 @@
       </tbody>
     </table>
   </div>
-<!--
+
   <div class="card-footer">
     <a class="btn btn-success btn-lg" (click)="add()">
       <i class="fa fa-plus"></i>
@@ -122,4 +122,3 @@
   </div>
 
 
--->

@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HttpClientModule} from "@angular/common/http";
-import { FormsModule} from "@angular/forms";
-import {CommonModule} from "@angular/common";
+import { FormsModule} from '@angular/forms';
+import { CommonModule} from "@angular/common";
+import { PatientComponent} from "./patient/patient.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    PatientComponent
   ],
   imports: [
     BrowserModule,
