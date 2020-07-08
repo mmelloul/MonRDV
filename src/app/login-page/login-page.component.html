@@ -1,1 +1,8 @@
-<p>login-page works!</p>
+
+<div class="wrapper">
+  <div id="formContent">
+      <input autocomplete="off" type="text" name="email" id="login" class="fadeIn second"  placeholder="Email" [(ngModel)]="email">
+      <input type="password" class="third" name="password"  placeholder="Mot de passe" [(ngModel)]="mdp">
+      <input type="button" class="fadeIn fourth" value="Log In" (click)="login()">
+  </div>
+</div>

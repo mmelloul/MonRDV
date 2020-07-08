@@ -1,0 +1,78 @@
+{
+
+  "patients":
+  [
+    {
+      "id": 1,
+      "nom": "SULTAN",
+      "prenom": "Eric",
+      "email": "e.sultan@ajc.fr",
+      "mdp": "se",
+      "profil": "U",
+      "adresse": {
+                  "rue": "1 rue de la Paix",
+                  "CP": "75008",
+                  "ville": "Paris"
+
+                  }
+
+      },
+    {
+      "id": 2,
+      "nom": "ASSOUS",
+      "prenom": "Steeve",
+      "email": "s.assous@ajc.fr",
+      "mdp": "as",
+      "profil": "U",
+      "adresse": {
+        "rue": "1 rue de la Poesie",
+        "CP": "94000",
+        "ville": "Créteil"
+
+      }
+
+    },
+    {
+      "id": 3,
+      "nom": "DUPONT",
+      "prenom": "daniella",
+      "email": "d.dupont@ajc.fr",
+      "mdp": "dd",
+      "profil": "U",
+      "adresse": {
+        "rue": "19, rue de la Paix",
+        "CP": "75012",
+        "ville": "Paris"
+      }
+
+    },
+    {
+      "id": 4,
+      "nom": "KA",
+      "prenom": "Paul",
+      "email": "p.ka@ajc.fr",
+      "mdp": "pk",
+      "profil": "U",
+      "adresse": {
+        "rue": "19, email des oeillets",
+        "CP": "77680",
+        "ville": "Roissy"
+      }
+
+    },
+    {
+      "id": 5,
+      "nom": "LOUIS",
+      "prenom": "Sabine",
+      "email": "s.louis@ajc.fr",
+      "mdp": "ls",
+      "profil": "U",
+      "adresse": {
+        "rue": "1 rue de la Paire",
+        "CP": "75009",
+        "ville": "Paris"
+      }
+
+    }
+  ]
+}
