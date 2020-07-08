@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { Routes, RouterModule } from '@angular/router';
 import {LoginPageComponent} from './login-page/login-page.component';
 import {PratitienComponent} from './pratitien/pratitien.component';
@@ -13,11 +14,12 @@ const routes: Routes = [
   { path: 'pratitien', component: PratitienComponent },
   { path: 'ajout-praticien-component', component: AjoutPraticienComponent },
   { path: 'patient', component: PatientComponent, canActivate: [AuthGuard] },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  ];
-
+  //
+  // { path: 'praticien', component: PraticienComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }];
 
 @NgModule({
+
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

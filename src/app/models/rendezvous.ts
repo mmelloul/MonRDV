@@ -10,6 +10,4 @@ export class Rendezvous
   heureRV: Time;
   duree: number;
 
-
-
 }

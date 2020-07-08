@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {PatientHttpService} from './patient.service';
 import {Patient} from '../models/Patient';
-import {Adresse} from "../models/Adresse";
+import {Adresse} from '../models/Adresse';
+import {Personne} from '../models/Personne';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-patient',
@@ -10,14 +12,12 @@ import {Adresse} from "../models/Adresse";
 })
 export class PatientComponent implements OnInit {
   currentUser: Personne;
-  constructor(private router: Router) {
+  constructor(private router: Router, private patientService: PatientHttpService) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
+  }
 
   patientForm: Patient = null;
 
-  constructor(private patientService: PatientHttpService) {
-  }
 
   ngOnInit(): void {
   }
@@ -77,7 +77,9 @@ export class PatientComponent implements OnInit {
   }
 
   full(adresse: Adresse) {
-    return adresse.rue + " " + adresse.CP + " " + adresse.ville.toUpperCase();
+    return adresse.rue + ' '  + adresse.CP + ' ' + adresse.ville.toUpperCase();
+  }
+
   logout() {
     localStorage.setItem('currentUser', null);
     this.router.navigate(['/']);
