@@ -74,5 +74,39 @@
       }
 
     }
+  ],
+  "praticiens": [
+    {
+      "nom": "test1",
+      "prenom": "test2",
+      "email": "aaa@test2.co",
+      "adresse": "adre",
+      "specialite": "generale",
+      "id": 5
+    },
+    {
+      "nom": "pnom5",
+      "prenom": "preno5",
+      "email": "5555@gmail.com",
+      "adresse": "paris",
+      "specialite": "neuro",
+      "id": 6
+    },
+    {
+      "nom": "ahaha",
+      "prenom": "kjkj",
+      "email": "aaa@aa.com",
+      "adresse": "aaa",
+      "specialite": "aaa",
+      "id": 7
+    },
+    {
+      "nom": "MM",
+      "prenom": "eric",
+      "email": "erci@gmail.com",
+      "adresse": "67 aghaun ",
+      "specialite": "NEUROLOGUE",
+      "id": 8
+    }
   ]
 }
