@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'patient', component: PatientComponent, canActivate: [AuthGuard] },
   { path: 'praticien', component: PraticienComponent, canActivate: [AuthGuard] },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },];
+  { path: '', redirectTo: 'login', pathMatch: 'full' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
